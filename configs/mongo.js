@@ -1,12 +1,11 @@
-//Configuración a la conexión a la BD
+//Configuración estricta
 'use strict'
 
-import mongoose from "mongoose"
+import mongoose, { Mongoose } from "mongoose"
 
-export const connect = async()=>{
+export const connect = async() => {
     try{
-        //Proceso de conexión
-        mongoose.connection.on('error', ()=>{
+        mongoose.connection.on('error', () =>{
             console.log('MongoDB | could not be connect to mongodb')
             mongoose.disconnect()
         })
@@ -19,17 +18,17 @@ export const connect = async()=>{
         mongoose.connection.once('open', ()=>{
             console.log('MongoDB | connected to database')
         })
-        mongoose.connection.on('reconnected', ()=>{
+        mongoose.connection.on('reconected', ()=>{
             console.log('MongoDB | reconected to mongodb')
         })
-        mongoose.connection.on('disconnected', ()=>{
-            console.log('MongoDB | disconnected')
+        mongoose.connection.on('disconected', ()=>{
+            console.log('MongoDB | disconected to mongodb')
         })
         await mongoose.connect(process.env.URI_MONGO, {
             serverSelectionTimeoutMS: 5000,
             maxPoolSize: 50
-        })
+        }) 
     }catch(err){
-        console.error('Database connection failed',err)
+        console.error(err)
     }
 }
