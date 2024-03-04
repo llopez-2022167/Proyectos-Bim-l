@@ -1,10 +1,10 @@
-import mongoose from "mongoose"
+import {Schema, model} from "mongoose"
 
 
 //const { default: mongoose } = require("mongoose");
 
 
-const userSchema = mongoose.Schema({
+const userSchema = Schema({
     name: {
         type: String,
         required: true
@@ -30,12 +30,13 @@ const userSchema = mongoose.Schema({
         enum: ['ADMIN', 'CLIENT'],
         require: true
     },
+
     //categorias: [{
       //  type: mongoose.Schema.Types.ObjectId,
         //ref: 'Categoria'
     //}]
+},{
+    versionKey: false
 });
 
-export default mongoose.model('user', userSchema)
-
-//export default mongoose.model('Usuario', usuarioSchema);
+export default model('user', userSchema)

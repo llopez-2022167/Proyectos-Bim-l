@@ -22,7 +22,7 @@ const productoSchema = Schema({
         required: true
     },
     categoria: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Categoria',
         require: true
     }
@@ -31,4 +31,4 @@ const productoSchema = Schema({
 });
 
 //Definicion modelo para el producto
-export default model('Producto', productoSchema);
+export default model('Productos', productoSchema);

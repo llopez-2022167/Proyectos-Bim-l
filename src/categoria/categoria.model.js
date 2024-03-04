@@ -9,6 +9,8 @@ const categoriaSchema = Schema({
         type: String,
         required: true
     },
+},{
+    versionKey: false
 });
 
 export default model('Categoria', categoriaSchema);

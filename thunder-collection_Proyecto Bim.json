@@ -1,0 +1,288 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Proyecto Bim",
+    "dateExported": "2024-03-04T17:38:17.584Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "4c40465e-8037-432a-97c4-1dd7775b2f87",
+            "name": "User",
+            "containerId": "",
+            "created": "2024-02-23T13:54:16.209Z",
+            "sortNum": 30000,
+            "settings": {
+                "headers": [
+                    {
+                        "name": "post",
+                        "value": "/loginUser"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "2dc28fd2-68a8-4fc8-9e0f-c649964e0fad",
+            "name": "Producto",
+            "containerId": "",
+            "created": "2024-02-23T14:34:45.566Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "8f892380-0069-44e4-839a-a112cd33d802",
+            "name": "Categoria",
+            "containerId": "",
+            "created": "2024-02-23T14:40:03.882Z",
+            "sortNum": 70000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "68021e2c-45b4-4a87-982b-833b66d90888",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "4c40465e-8037-432a-97c4-1dd7775b2f87",
+            "name": "register",
+            "url": "/registerUser",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-23T13:55:02.996Z",
+            "modified": "2024-03-04T17:31:02.765Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Jmolina"
+                    },
+                    {
+                        "name": "username",
+                        "value": "Jose"
+                    },
+                    {
+                        "name": "password",
+                        "value": "Honduras"
+                    },
+                    {
+                        "name": "email",
+                        "value": "Jmolina@gamil.com"
+                    },
+                    {
+                        "name": "rol",
+                        "value": "CLIENT"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "8f7d63ac-4927-469b-a9e4-5a521fa5584b",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "4c40465e-8037-432a-97c4-1dd7775b2f87",
+            "name": "login",
+            "url": "/loginUser",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-02-23T14:02:47.532Z",
+            "modified": "2024-03-04T17:32:09.820Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "jose"
+                    },
+                    {
+                        "name": "password",
+                        "value": "Honduras"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "331c5afd-e461-41b9-9a7b-2504accc1bf8",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "4c40465e-8037-432a-97c4-1dd7775b2f87",
+            "name": "update",
+            "url": "/update/65e60557a4983c05650c6c9f",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-02-23T14:11:15.994Z",
+            "modified": "2024-03-04T17:34:36.426Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "$2b$10$xkke9WooulKsHAZdhUAwre/NNamrCFLlacxnY9ag9.JUZMNFCdOAS"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Jmolina"
+                    },
+                    {
+                        "name": "username",
+                        "value": "jose"
+                    },
+                    {
+                        "name": "email",
+                        "value": "Tt@gmail.com"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "36c01918-5040-4734-9fdf-b0d2d01cc5d8",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "4c40465e-8037-432a-97c4-1dd7775b2f87",
+            "name": "deleteU",
+            "url": "/delete/65d8a6e29b38f64967efa000",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-02-23T14:16:21.889Z",
+            "modified": "2024-02-23T14:29:22.389Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YTZlMjliMzhmNjQ5NjdlZmEwMDAiLCJuYW1lIjoiRmFicmljaW8iLCJ1c2VybmFtZSI6ImZsb3BleiIsImlhdCI6MTcwODY5NzQxOSwiZXhwIjoxNzA4NzA4MjE5fQ.xG0em3K4iF73l3YvQgPqWc8Bztbb1ddEkrfWYjb8BB4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "94008c10-81a0-4475-bd95-0f7ae6c1f17e",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "2dc28fd2-68a8-4fc8-9e0f-c649964e0fad",
+            "name": "obtenerProductos",
+            "url": "/crearProducto",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-02-23T14:47:47.088Z",
+            "modified": "2024-03-04T14:32:04.762Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Leche"
+                    },
+                    {
+                        "name": "precio",
+                        "value": "12"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Producto lacteo"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "12"
+                    },
+                    {
+                        "name": "categoria",
+                        "value": "65d8ca4504c8387e0b5f5ead"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a8bd9d6-03a2-4764-bd27-dd8d02d4aa8d",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "8f892380-0069-44e4-839a-a112cd33d802",
+            "name": "post",
+            "url": "/categoria/add",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-02-23T14:53:47.195Z",
+            "modified": "2024-03-04T14:44:00.420Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "nombre",
+                        "value": "Telefono"
+                    },
+                    {
+                        "name": "descripcion",
+                        "value": "TelefonoMovil"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ed21622c-fe41-4e31-94d5-aa46cd155034",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "8f892380-0069-44e4-839a-a112cd33d802",
+            "name": "createCategoria",
+            "url": "/createCategoria",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-02-23T15:07:10.280Z",
+            "modified": "2024-02-23T17:25:09.850Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "nombre",
+                        "value": "Sarten"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "0218b411-31bf-4d5c-b302-18141e37a543",
+            "colId": "859bea14-0860-421f-9e17-c1940ef8cf17",
+            "containerId": "2dc28fd2-68a8-4fc8-9e0f-c649964e0fad",
+            "name": "obtenerProductoId",
+            "url": "/add",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-02-23T15:19:30.068Z",
+            "modified": "2024-02-23T16:25:51.058Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "nombre",
+                        "value": "Leche"
+                    },
+                    {
+                        "name": "descripcion",
+                        "value": "Procuto lacteo"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2656"
+        }
+    }
+}
