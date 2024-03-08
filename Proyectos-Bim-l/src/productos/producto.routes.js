@@ -19,10 +19,7 @@ const api = Router();
 api.post('/addProducto',addProducto);
 api.post('/obtenerCatalago', obtenerCatalago);
 api.post('/obtenerProducto/:id', obtenerProducto)
-
-//Rutas privasas 
 api.get('/testProducto'[validateJwt], testProducto);
-//api.post('/crearProducto'[validateJwt, isAdmin], crearProducto);
 api.put('/actualizarProducto/:id'[validateJwt, isAdmin], actualizarProducto);
 api.delete('/eliminarProducto/:id'[validateJwt, isAdmin] ,eliminarProducto);
 

@@ -15,4 +15,4 @@ const categoriaSchema = Schema({
     versionKey: false
 });
 
-export default model('Categoria', categoriaSchema);
+export default model('categoria', categoriaSchema);

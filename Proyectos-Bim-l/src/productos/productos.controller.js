@@ -4,38 +4,42 @@ import Categoria from '../categoria/categoria.model.js'
 import Producto from './productos.model.js'
 
 export const testProducto = (req,res)=>{
-    console.log('test')
-    return res
-    .send({message: 'Esta corriendo correctamente'})
+    console.log('test is running')
+    res.send({message: 'prueba buena'})
 };
 
 // Controlador para agregar un nuevo producto
 export const addProducto = async (req, res) => {
     try {
-        // Se capturan los datos del producto del cuerpo de la solicitud
-        let data = req.body;
+        // Extraer los datos del producto del cuerpo de la solicitud
+        const { name, price, description, stock, categoria } = req.body;
 
-        // Se busca la categoría asociada al producto en la base de datos
-        let Categoria = await Categoria.findOne({ _id: data.Categoria });
-
-        // Si la categoría no existe, se devuelve un mensaje de error
-        if (!Categoria) {
-            return res.status(404).send({ message: "La categoría no existe" });
+        // Verificar si la categoría existe
+        const categoriaExistente = await Categoria.findById(categoria);
+        if (!categoriaExistente) {
+            return res.status(404).send({ message: 'La categoría especificada no existe' });
         }
 
-        // Se crea una nueva instancia del modelo Producto con los datos proporcionados
-        let newProducto = new Producto(data);
+        // Crear un nuevo producto y asignar la categoría
+        const nuevoProducto = new Producto({
+            name,
+            price,
+            description,
+            stock,
+            categoria: categoriaExistente._id // Asignar el ID de la categoría existente
+        });
 
-        // Se guarda el nuevo producto en la base de datos
-        await newProducto.save();
+        // Guardar el nuevo producto en la base de datos
+        const productoGuardado = await nuevoProducto.save();
 
-        // Se devuelve una respuesta exitosa indicando que el producto ha sido agregado a la tienda
-        return res.status(200).send({ message: `Se agregó ${newProducto.name} a la tienda` });
+        // Devolver el producto guardado como respuesta
+        res.status(201).send({ producto: productoGuardado });
     } catch (error) {
-        // En caso de error, se devuelve un mensaje de error al cliente
-        res.status(500).send({ error: 'No se puede agregar el producto' });
+        console.error(error);
+        res.status(500).send({ message: 'Error al agregar el producto' });
     }
 };
+
 
 
 // Controlador para obtener el catálogo completo de productos
@@ -104,8 +108,8 @@ export const eliminarProducto = async (req, res) => {
             return res.status(400).send({ message: 'Invalid category ID' });
         }
         // Buscamos los productos que pertenecen a la categoría especificada
-        let products = await Product.find({ category: id });
-        return res.status(200).send(products);
+        let Productos = await Producto.find({ Categoria: id });
+        return res.status(200).send(Productos);
     } catch (error) {
         console.error(error);
         return res.status(500).send({ message: 'Error retrieving products by category', error: error });

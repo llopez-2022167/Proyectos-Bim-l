@@ -1,18 +1,14 @@
 'use strict'
 
 import { checkUpdate } from '../utils/validator.js'
-//import { checkUpdate } from '../utils/validator.js'
 import Categoria from './categoria.model.js'
 import jwt   from 'jsonwebtoken'
-
 
 //Categoria de pruba
 export const testCategoria = (req, res) => {
     console.log('Test is running')
     res.send({ message: 'prueba buena' })
 }
-
-
 
 
 export const add = async (req, res) => {

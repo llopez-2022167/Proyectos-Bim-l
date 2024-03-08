@@ -29,4 +29,4 @@ const productoSchema = Schema({
 });
 
 //Definicion modelo para el producto
-export default model('Productos', productoSchema);
+export default model('productos', productoSchema);
