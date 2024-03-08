@@ -4,10 +4,10 @@ import { Router } from "express"
 import {
     testCategoria,
     add,
-    obtenerCategoriaId,
-    createCategoria,
-    updateCategoria,
-    deleteCategoria
+    obtenerTodasCategorias,
+    //obtenerCategoriaPorId,
+    update,
+    eliminarCategoria
 } from './categoria.controller.js'
 import {isAdmin,validateJwt} from '../middleware/validate-jwt.js'
 
@@ -16,13 +16,13 @@ const api= Router();
 
 //Rutas Publicas
 api.post('/add', add)
-api.post('/obtenerCategoriaId:/id', obtenerCategoriaId)
+api.post('/categorias', obtenerTodasCategorias)
 
 //Rutas privadas
 api.get('/testCategoria'[validateJwt], testCategoria)
-api.post('/createCategoria'[validateJwt, isAdmin],createCategoria)
-api.put('/updateCategoria'[validateJwt, isAdmin], updateCategoria)
-api.delete('/deleteCategoria'[validateJwt,isAdmin], deleteCategoria)
+//api.post('/CategoriaPorId/:id'[validateJwt, isAdmin],obtenerCategoriaPorId)
+api.put('/update/:id'[validateJwt, isAdmin], update)
+api.delete('/eliminarCategoria'[validateJwt,isAdmin], eliminarCategoria)
 
 export default api;
 

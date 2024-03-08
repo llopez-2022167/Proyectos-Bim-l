@@ -3,27 +3,32 @@
 import { Schema , model} from "mongoose"; 
 
 const productoSchema = Schema({
-    name: {
-        type: String,
+    fecha: {
+        type : Date,
         required: true
     },
-    price: {
-        type: Number,
-        required:true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    stock: {
+    cantidad:{
         type: Number,
         required: true
     },
-    categoria: {
-        type: Schema.Types.ObjectId,
-        ref: 'Categoria',
-        require: true
-    }
+    estado: {
+        type: String,
+        enum: ['CREATED', 'CANCELLED', 'COMPLETED'],
+        default: 'CREATED',
+        required: true
+    },
+    productos: {
+        type: Schema.ObjectId,
+        ref: 'product',
+        required: true
+       
+    },
+    user: {
+        type: Schema.ObjectId,
+        ref: 'user',
+        required: true
+        
+    },
 },{
     versionKey: false
 });

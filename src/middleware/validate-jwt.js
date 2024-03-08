@@ -35,3 +35,14 @@ export const isAdmin = async (req, res, next) => {
       return res.status(403).send({ message: 'Unauthorized role' })
   }
 }
+
+
+export const isClient = async(req, res, next)=>{
+  try{
+      let { user } = req
+      if(!user || user.role !== 'CLIENT') return res.status(403).send({message: `You dont have access to do those things| username: ${user.username}`})
+      next()
+  }catch(err){
+      console.error(err)
+  }
+}
